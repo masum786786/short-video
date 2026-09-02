@@ -298,6 +298,11 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                     <span>Any UPI</span>
                   </button>
                 </div>
+
+                <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-purple-950/40 border border-purple-800/40 px-3 py-1.5 text-[11px] text-purple-200">
+                  <span className="font-bold text-amber-400">💡 Tip:</span>
+                  <span>PhonePe me popup aane par neeche <b>DISMISS</b> dabayein aur <b>Pay ₹49</b> karein.</span>
+                </div>
               </div>
 
               {/* Next Step: Submit Screenshot */}
