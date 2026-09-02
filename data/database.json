@@ -1,0 +1,57 @@
+{
+  "videos": [
+    {
+      "title": "Short Video 6299",
+      "description": "Uploaded via Cloudinary widget",
+      "cloudinaryPublicId": "my_videos/iwwvzi04jgb6ynqxphmp",
+      "cloudinaryUrl": "https://res.cloudinary.com/dya4mw0bt/video/upload/f_auto/v1788338185/my_videos/iwwvzi04jgb6ynqxphmp.mp4",
+      "thumbnailUrl": "https://res.cloudinary.com/dya4mw0bt/video/upload/so_2,f_jpg,w_400,h_250,c_fill/v1788338185/my_videos/iwwvzi04jgb6ynqxphmp.mp4",
+      "duration": 60,
+      "_id": "vid_1788338186308_f1gp65",
+      "likesCount": 0,
+      "sharesCount": 0,
+      "createdAt": "2026-09-02T08:36:26.308Z",
+      "updatedAt": "2026-09-02T08:36:26.308Z"
+    }
+  ],
+  "users": [
+    {
+      "_id": "usr_1788338281748_f6vd9",
+      "name": "7257925345",
+      "mobile": "7257925345",
+      "createdAt": "2026-09-02T08:38:01.748Z"
+    }
+  ],
+  "likes": [],
+  "payments": [
+    {
+      "_id": "pay_1788338285697_b61z5",
+      "userId": "user_bf4l3q42mtjso4xz",
+      "userName": "7257925345",
+      "userMobile": "7257925345",
+      "videoId": "vid_1788338186308_f1gp65",
+      "videoTitle": "Short Video 6299",
+      "amount": 49,
+      "paymentScreenshot": "/Users/masumraza/Desktop/short-video-premium/uploads_temp/screenshot-1788338281732-413178332.jpg",
+      "status": "approved",
+      "submittedAt": "2026-09-02T08:38:05.697Z",
+      "verifiedAt": "2026-09-02T08:38:46.188Z",
+      "verifiedBy": "Admin"
+    }
+  ],
+  "access": [
+    {
+      "_id": "acc_1788338285697",
+      "userId": "user_bf4l3q42mtjso4xz",
+      "videoId": "vid_1788338186308_f1gp65",
+      "paymentId": "pay_1788338285697_b61z5",
+      "accessStatus": "unlocked",
+      "unlockedAt": "2026-09-02T08:38:46.188Z"
+    }
+  ],
+  "config": {
+    "upiId": "masum345@ptyes",
+    "upiName": "Masum",
+    "phonePeMerchantId": "PHONEPE_MERCHANT_DEFAULT"
+  }
+}

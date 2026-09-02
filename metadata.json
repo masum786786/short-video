@@ -1,0 +1,6 @@
+{
+  "name": "short video",
+  "description": "A modern video streaming platform featuring Cloudinary video uploads, 5-second previews, PhonePe/UPI payments, and admin verification dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
