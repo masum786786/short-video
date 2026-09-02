@@ -226,10 +226,24 @@ export const api = {
     }
 
     const cfg = getLocalConfig();
-    const upiString = `upi://pay?pa=${cfg.upiId}&pn=${encodeURIComponent(cfg.upiName)}&am=49&cu=INR&tn=${encodeURIComponent('Short Video Access')}`;
+    const upiId = cfg.upiId || 'masum345@ptyes';
+    const upiName = encodeURIComponent(cfg.upiName || 'Masum');
+    const amount = 49;
+    const tn = encodeURIComponent('Short Video Access');
+
+    const upiString = `upi://pay?pa=${upiId}&pn=${upiName}&am=${amount}&cu=INR&tn=${tn}`;
+    const phonePeDeepLink = `phonepe://pay?pa=${upiId}&pn=${upiName}&am=${amount}&cu=INR&tn=${tn}`;
+    const gPayDeepLink = `tez://upi/pay?pa=${upiId}&pn=${upiName}&am=${amount}&cu=INR&tn=${tn}`;
+    const paytmDeepLink = `paytmmp://pay?pa=${upiId}&pn=${upiName}&am=${amount}&cu=INR&tn=${tn}`;
+    const bhimDeepLink = `bhim://pay?pa=${upiId}&pn=${upiName}&am=${amount}&cu=INR&tn=${tn}`;
+
     return {
       ...cfg,
       upiString,
+      phonePeDeepLink,
+      gPayDeepLink,
+      paytmDeepLink,
+      bhimDeepLink,
       qrCodeDataUrl: '',
     };
   },

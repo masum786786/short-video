@@ -21,6 +21,7 @@ import confetti from 'canvas-confetti';
 import { Video, Payment, UPIConfig } from '../types';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../lib/api';
+import { openUPIApp } from '../lib/upi';
 import { PaytmQRCard } from './PaytmQRCard';
 
 interface PaywallModalProps {
@@ -136,10 +137,13 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
     } catch (_) {}
   };
 
-  const handleOpenUPI = (url?: string) => {
-    const targetUrl = url || upiDetails?.upiString;
-    if (!targetUrl) return;
-    window.location.href = targetUrl;
+  const handleOpenUPI = (app: 'phonepe' | 'gpay' | 'paytm' | 'bhim' | 'any') => {
+    openUPIApp(app, {
+      upiId: upiDetails?.upiId || 'masum345@ptyes',
+      upiName: upiDetails?.upiName || 'Masum',
+      amount: 49,
+      transactionNote: `ShortVideo ${video._id.slice(0, 8)} Access`,
+    });
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -255,7 +259,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                   {/* PhonePe Button */}
                   <button
                     id="phonepe-pay-btn"
-                    onClick={() => handleOpenUPI(upiDetails?.phonePeDeepLink)}
+                    onClick={() => handleOpenUPI('phonepe')}
                     className="flex items-center justify-center space-x-2 rounded-xl bg-[#5f259f] hover:bg-[#6f2fb8] active:scale-95 p-2.5 text-xs font-extrabold text-white shadow-md shadow-purple-900/30 transition-all cursor-pointer"
                   >
                     <div className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-white text-[#5f259f] font-black text-[9px]">
@@ -267,7 +271,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                   {/* Google Pay Button */}
                   <button
                     id="gpay-pay-btn"
-                    onClick={() => handleOpenUPI(upiDetails?.gPayDeepLink)}
+                    onClick={() => handleOpenUPI('gpay')}
                     className="flex items-center justify-center space-x-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 active:scale-95 p-2.5 text-xs font-bold text-white transition-all cursor-pointer"
                   >
                     <span className="text-[#4285F4] font-black">G</span>
@@ -277,7 +281,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                   {/* Paytm Button */}
                   <button
                     id="paytm-pay-btn"
-                    onClick={() => handleOpenUPI(upiDetails?.paytmDeepLink)}
+                    onClick={() => handleOpenUPI('paytm')}
                     className="flex items-center justify-center space-x-2 rounded-xl bg-[#002e6e] hover:bg-[#003d94] active:scale-95 p-2.5 text-xs font-extrabold text-white shadow-md shadow-blue-900/30 transition-all cursor-pointer"
                   >
                     <span className="text-[#00b9f5] font-black">Pay</span>
@@ -287,7 +291,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                   {/* Any UPI / BHIM */}
                   <button
                     id="any-upi-pay-btn"
-                    onClick={() => handleOpenUPI(upiDetails?.upiString)}
+                    onClick={() => handleOpenUPI('any')}
                     className="flex items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 active:scale-95 p-2.5 text-xs font-extrabold text-white shadow-md shadow-rose-900/30 transition-all cursor-pointer"
                   >
                     <Smartphone className="h-3.5 w-3.5" />
