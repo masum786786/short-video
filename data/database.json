@@ -1,0 +1,33 @@
+{
+  "videos": [
+    {
+      "title": "fergervger",
+      "description": "gegvrefvrevre",
+      "cloudinaryPublicId": "local_1788334012545",
+      "cloudinaryUrl": "/uploads/video-1788334012528-882682932.MP4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80",
+      "duration": 60,
+      "_id": "vid_1788334012545_24ide7",
+      "likesCount": 1,
+      "sharesCount": 0,
+      "createdAt": "2026-09-02T07:26:52.545Z",
+      "updatedAt": "2026-09-02T07:26:52.545Z"
+    }
+  ],
+  "users": [],
+  "likes": [
+    {
+      "_id": "lk_1788335029714",
+      "userId": "user_p0cwr4wvmtjrsg2t",
+      "videoId": "vid_1788334012545_24ide7",
+      "createdAt": "2026-09-02T07:43:49.714Z"
+    }
+  ],
+  "payments": [],
+  "access": [],
+  "config": {
+    "upiId": "masum345@ptyes",
+    "upiName": "Masum",
+    "phonePeMerchantId": "PHONEPE_MERCHANT_DEFAULT"
+  }
+}
